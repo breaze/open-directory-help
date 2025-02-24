@@ -26,4 +26,7 @@ export class CategoryService {
     async updateCategory(categoryId:number, newData: Partial<Categories>){
         return this.categoryRepository.update(categoryId, newData);
     }
+    async findCategoryById(categoryId:number){
+        return this.categoryRepository.findOne({ where: { id:categoryId } });
+    }
 }

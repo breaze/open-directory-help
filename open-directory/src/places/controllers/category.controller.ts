@@ -24,4 +24,8 @@ export class CategoryController {
     updateCategory(@Param('categoryId') categoryId:number, @Body() data: Partial<Categories>){
         return this.categoryService.updateCategory(categoryId, data)
     }
+    @Get('find-category-by-id/:categoryId')
+    findCategoryById(@Param('categoryId') categoryId:number){
+       return this.categoryService.findCategoryById(categoryId);
+    }
 }
