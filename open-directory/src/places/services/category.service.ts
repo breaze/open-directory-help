@@ -23,5 +23,7 @@ export class CategoryService {
         return this.categoryRepository.delete(categoryId);
     }
 
-    //async updateCategory(category_id:number, )
+    async updateCategory(categoryId:number, newData: Partial<Categories>){
+        return this.categoryRepository.update(categoryId, newData);
+    }
 }
